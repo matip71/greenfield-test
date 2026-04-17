@@ -1,0 +1,117 @@
+.banner {
+  position: relative;
+  overflow: hidden;
+  min-height: 420px;
+  display: flex;
+  align-items: center;
+  border-radius: var(--radius-2xl);
+  margin-inline: var(--container-padding);
+  max-width: calc(var(--container-max) - var(--container-padding) * 2);
+  margin-inline: auto;
+}
+
+.imageWrapper {
+  position: absolute;
+  inset: 0;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 40%;
+}
+
+.imageOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    hsl(262, 70%, 15%, 0.88) 0%,
+    hsl(262, 60%, 20%, 0.65) 50%,
+    transparent 100%
+  );
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  padding-top: var(--space-16);
+  padding-bottom: var(--space-16);
+}
+
+.textBlock {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  max-width: 500px;
+}
+
+.tag {
+  display: inline-block;
+  padding: var(--space-1) var(--space-3);
+  background: var(--color-accent-500);
+  color: var(--color-neutral-900);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  border-radius: var(--radius-full);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  width: fit-content;
+}
+
+.headline {
+  font-size: clamp(var(--font-size-2xl), 4vw, var(--font-size-4xl));
+  font-weight: var(--font-weight-extrabold);
+  color: var(--color-neutral-0);
+  line-height: var(--line-height-tight);
+  letter-spacing: -0.02em;
+}
+
+.description {
+  font-size: var(--font-size-base);
+  color: hsl(0, 0%, 82%);
+  line-height: var(--line-height-relaxed);
+  max-width: 42ch;
+}
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-8);
+  background: var(--color-neutral-0);
+  color: var(--color-neutral-900);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-bold);
+  border-radius: var(--radius-full);
+  text-decoration: none;
+  width: fit-content;
+  transition: background var(--transition-fast), transform var(--transition-fast);
+}
+
+.cta:hover {
+  background: var(--color-neutral-100);
+  transform: translateX(4px);
+  color: var(--color-neutral-900);
+}
+
+.ctaArrow {
+  transition: transform var(--transition-fast);
+}
+
+.cta:hover .ctaArrow {
+  transform: translateX(4px);
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 768px) {
+  .banner { min-height: 360px; border-radius: var(--radius-xl); }
+  .imageOverlay {
+    background: hsl(262, 70%, 15%, 0.80);
+  }
+}
+
+@media (max-width: 480px) {
+  .banner { min-height: 300px; }
+}

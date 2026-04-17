@@ -1,0 +1,37 @@
+.page {
+  padding-top: var(--space-10);
+  padding-bottom: var(--space-24);
+  min-height: 60vh;
+}
+
+.pageTitle {
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: -0.02em;
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-8);
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: var(--space-12);
+  align-items: start;
+}
+
+.stepsCol {}
+.summaryCol {}
+
+/* ---- Responsive ---- */
+@media (max-width: 1024px) {
+  .layout { grid-template-columns: 1fr 320px; gap: var(--space-8); }
+}
+
+@media (max-width: 768px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+  /* Summary goes on top on mobile */
+  .summaryCol { order: -1; }
+  .pageTitle { font-size: var(--font-size-2xl); }
+}

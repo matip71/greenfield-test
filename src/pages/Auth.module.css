@@ -1,0 +1,136 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 80px); /* Adjust if header height varies */
+  padding: 2rem 1rem;
+  background-color: var(--surface-bg, #f9fafb);
+}
+
+.card {
+  background-color: #FFFFFF;
+  border-radius: 0;
+  box-shadow: none;
+  border: 1px solid #CACACB;
+  padding: 2.5rem 2rem;
+  width: 100%;
+  max-width: 440px;
+}
+
+.title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 0.5rem;
+  color: var(--text-primary, #111827);
+}
+
+.subtitle {
+  font-size: 0.95rem;
+  color: var(--text-secondary, #6b7280);
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-primary, #374151);
+}
+
+.input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1.5px solid #CACACB;
+  border-radius: 0;
+  font-size: 1rem;
+  transition: border-color 0.2s;
+  box-sizing: border-box;
+}
+
+.input:focus {
+  outline: none;
+  border-color: #111111;
+  box-shadow: none;
+}
+
+.inputError {
+  border-color: #D30005;
+}
+
+.inputError:focus {
+  box-shadow: none;
+}
+
+.errorText {
+  color: var(--error-color, #ef4444);
+  font-size: 0.75rem;
+  margin-top: 0.25rem;
+}
+
+.submitBtn {
+  width: 100%;
+  padding: 0.875rem;
+  background-color: #111111;
+  color: #ffffff;
+  border: none;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: background-color 0.2s;
+}
+
+.submitBtn:hover {
+  background-color: #707072;
+}
+
+.submitBtn:active {
+  opacity: 0.8;
+}
+
+.footer {
+  margin-top: 2rem;
+  text-align: center;
+  font-size: 0.875rem;
+  color: var(--text-secondary, #6b7280);
+}
+
+.link {
+  color: var(--primary-color, #000000);
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+.link:hover {
+  text-decoration: none;
+}
+
+.successMessage {
+  background-color: #F5F5F5;
+  border: 1px solid #007D48;
+  color: #007D48;
+  padding: 1rem;
+  border-radius: 0;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+@media (max-width: 480px) {
+  .card {
+    padding: 2rem 1.5rem;
+  }
+}

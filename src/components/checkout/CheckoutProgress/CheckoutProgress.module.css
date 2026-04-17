@@ -1,0 +1,83 @@
+.nav { margin-bottom: var(--space-10); }
+
+.steps {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+.stepItem {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+.stepItem:last-child { flex: 0; }
+
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  white-space: nowrap;
+}
+
+.circle {
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 50%;
+  border: 2px solid var(--color-border);
+  background: var(--color-surface);
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-base);
+}
+
+.label {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-muted);
+  transition: color var(--transition-base);
+}
+
+/* Active step */
+.active .circle {
+  border-color: var(--color-text-primary);
+  background: var(--color-text-primary);
+  color: var(--color-text-inverse);
+  box-shadow: none;
+}
+
+.active .label {
+  color: var(--color-text-primary);
+  font-weight: 500;
+}
+
+/* Done step */
+.done .circle {
+  border-color: var(--color-success-500);
+  background: var(--color-success-500);
+  color: white;
+}
+
+.done .label { color: var(--color-success-500); }
+
+/* Connecting line */
+.connector {
+  flex: 1;
+  height: 2px;
+  background: var(--color-border);
+  margin-bottom: calc(var(--font-size-xs) + var(--space-2) + 2px);
+  transition: background var(--transition-base);
+}
+
+.connectorDone { background: var(--color-success-500); }
+
+@media (max-width: 480px) {
+  .label { display: none; }
+  .stepItem:last-child { flex: 0 0 auto; }
+}

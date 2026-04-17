@@ -1,0 +1,163 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  font-weight: var(--font-weight-semibold);
+  border-radius: var(--radius-lg);
+  transition: all var(--transition-base);
+  white-space: nowrap;
+  user-select: none;
+  position: relative;
+  overflow: hidden;
+  letter-spacing: 0.01em;
+}
+
+.btn::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: white;
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+}
+
+.btn:hover:not(:disabled)::after {
+  opacity: 0.08;
+}
+
+.btn:active:not(:disabled)::after {
+  opacity: 0.14;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ---- Variants ---- */
+.primary {
+  background: linear-gradient(135deg, var(--color-primary-500), var(--color-primary-600));
+  color: var(--color-text-inverse);
+  box-shadow: 0 2px 8px hsl(262, 70%, 52%, 0.4);
+}
+
+.primary:hover:not(:disabled) {
+  box-shadow: 0 4px 16px hsl(262, 70%, 52%, 0.5);
+  transform: translateY(-1px);
+}
+
+.secondary {
+  background: var(--color-accent-500);
+  color: var(--color-neutral-900);
+  box-shadow: 0 2px 8px hsl(38, 90%, 50%, 0.35);
+}
+
+.secondary:hover:not(:disabled) {
+  box-shadow: 0 4px 16px hsl(38, 90%, 50%, 0.45);
+  transform: translateY(-1px);
+}
+
+.outline {
+  background: transparent;
+  color: var(--color-primary-600);
+  border: 2px solid var(--color-primary-500);
+}
+
+.outline:hover:not(:disabled) {
+  background: var(--color-primary-50);
+}
+
+.ghost {
+  background: transparent;
+  color: var(--color-text-primary);
+}
+
+.ghost:hover:not(:disabled) {
+  background: var(--color-surface-alt);
+}
+
+.danger {
+  background: var(--color-error-500);
+  color: var(--color-text-inverse);
+}
+
+/* ---- Pill Monochromatic ---- */
+.pill {
+  background: var(--color-text-primary); /* Main Black */
+  color: var(--color-text-inverse); /* Main White */
+  border-radius: 30px;
+  font-weight: 500;
+  box-shadow: none;
+}
+
+.pill:hover:not(:disabled) {
+  background: #707072;
+}
+
+.pill-outline {
+  background: transparent;
+  color: var(--color-text-primary);
+  border: 1.5px solid #CACACB;
+  border-radius: 30px;
+  font-weight: 500;
+}
+
+.pill-outline:hover:not(:disabled) {
+  border-color: #707072;
+  background: #E5E5E5;
+}
+
+/* ---- Sizes ---- */
+.sm {
+  padding: var(--space-2) var(--space-4);
+  font-size: var(--font-size-sm);
+  height: 2rem;
+}
+
+.md {
+  padding: var(--space-3) var(--space-6);
+  font-size: var(--font-size-base);
+  height: 2.75rem;
+}
+
+.lg {
+  padding: var(--space-4) var(--space-8);
+  font-size: var(--font-size-lg);
+  height: 3.25rem;
+}
+
+.fullWidth {
+  width: 100%;
+}
+
+/* ---- Loading ---- */
+.loading {
+  pointer-events: none;
+}
+
+.loadingText {
+  opacity: 0.7;
+}
+
+.spinner {
+  width: 1em;
+  height: 1em;
+  border: 2px solid currentColor;
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  flex-shrink: 0;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
