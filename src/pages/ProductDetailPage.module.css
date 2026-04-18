@@ -19,7 +19,9 @@
   transition: color var(--transition-fast);
 }
 
-.breadcrumbLink:hover { color: var(--color-primary-600); }
+.breadcrumbLink:hover {
+  color: var(--color-primary-600);
+}
 
 .breadcrumbSep {
   font-size: var(--font-size-sm);
@@ -39,12 +41,11 @@
 /* Layout */
 .layout {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   gap: var(--space-14);
   align-items: start;
 }
 
-.galleryCol {}
 
 .infoCol {
   display: flex;
@@ -59,7 +60,9 @@
   flex-wrap: wrap;
 }
 
-.saleBadge, .newBadge, .bestsellerBadge {
+.saleBadge,
+.newBadge,
+.bestsellerBadge {
   padding: var(--space-1) var(--space-3);
   border-radius: var(--radius-full);
   font-size: var(--font-size-xs);
@@ -68,9 +71,20 @@
   text-transform: uppercase;
 }
 
-.saleBadge       { background: hsl(0, 84%, 94%); color: var(--color-error-500); }
-.newBadge        { background: var(--color-primary-50); color: var(--color-primary-700); }
-.bestsellerBadge { background: hsl(38, 100%, 92%); color: hsl(38, 80%, 30%); }
+.saleBadge {
+  background: hsl(0, 84%, 94%);
+  color: var(--color-error-500);
+}
+
+.newBadge {
+  background: var(--color-primary-50);
+  color: var(--color-primary-700);
+}
+
+.bestsellerBadge {
+  background: hsl(38, 100%, 92%);
+  color: hsl(38, 80%, 30%);
+}
 
 /* Title */
 .title {
@@ -126,8 +140,15 @@
 }
 
 @keyframes pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.4; }
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.4;
+  }
 }
 
 .outOfStock {
@@ -202,19 +223,34 @@
   transition: background var(--transition-fast);
 }
 
-.notFoundLink:hover { background: #707072; }
+.notFoundLink:hover {
+  background: #707072;
+}
 
 /* ---- Responsive ---- */
+@media (min-width: 769px) {
+  .galleryCol {
+    margin-right: 10px;
+  }
+}
+
 @media (max-width: 768px) {
   .layout {
     grid-template-columns: 1fr;
     gap: var(--space-8);
   }
 
-  .title { font-size: var(--font-size-2xl); }
+  .title {
+    font-size: var(--font-size-2xl);
+  }
 }
 
 @media (max-width: 480px) {
-  .breadcrumb { display: none; }
-  .trust { padding: var(--space-3); }
+  .breadcrumb {
+    display: none;
+  }
+
+  .trust {
+    padding: var(--space-3);
+  }
 }
